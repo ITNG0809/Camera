@@ -1,0 +1,46 @@
+.camera-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:20px;align-items:start}.viewfinder-wrap{min-width:0}.viewfinder{position:relative;background:#080a0e;border:1px solid var(--line);border-radius:16px;overflow:hidden;aspect-ratio:4/3;display:grid;place-items:center;max-height:calc(100vh - 190px)}#video{width:100%;height:100%;object-fit:contain;display:block;filter:brightness(var(--preview-brightness,1))}.grid-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.viewfinder-top{position:absolute;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;pointer-events:none}.viewfinder-top span{font-size:11px;font-weight:700;color:#fff;background:#080a0eb8;padding:6px 9px;border-radius:7px}.camera-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;background:radial-gradient(ellipse at center,#202a39,#0b0e13 70%)}.camera-placeholder[hidden]{display:none}.camera-glyph{font-size:46px;color:var(--accent)}.camera-placeholder h2{margin:5px 0}.camera-placeholder p{color:var(--muted);font-size:13px}.focus-reticle{position:absolute;width:48px;height:48px;border:1px solid #ffffff77;border-radius:5px;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;opacity:.0}.camera-tools{display:flex;align-items:center;gap:12px;margin-top:12px;padding:12px;background:var(--panel);border:1px solid var(--line);border-radius:12px}.tool-btn{display:flex;align-items:center;gap:7px;background:transparent;border:1px solid var(--line);color:var(--text);border-radius:9px;padding:9px 11px;white-space:nowrap}.tool-btn[aria-pressed=true]{background:#263c5b;border-color:#466a9b}.tool-btn span,.zoom-control span{font-size:12px}.zoom-control{display:flex;align-items:center;gap:10px;flex:1;min-width:100px}.zoom-control input{min-width:30px}.zoom-control output{font-size:11px;color:var(--accent);min-width:36px}.control-panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:18px}.panel-heading{display:flex;align-items:center;justify-content:space-between}.panel-heading small,.gallery-header small{color:var(--accent);font-size:10px;font-weight:800;letter-spacing:1.5px}.panel-heading h2{font-size:17px;margin:4px 0 0}.live-pill{font-size:10px;color:#74dba7;background:#1b3b30;padding:6px 8px;border-radius:20px}.capture-actions{display:flex;align-items:center;justify-content:center;gap:17px;padding:24px 0 17px}.shutter{width:76px;height:76px;border-radius:50%;border:4px solid #eaf0f8;background:transparent;display:grid;place-items:center;flex:none}.shutter span{width:58px;height:58px;border-radius:50%;background:#f4f6fa;display:block;transition:.12s}.shutter:active span{transform:scale(.88)}.capture-caption{display:flex;flex-direction:column;gap:4px}.capture-caption strong{font-size:14px}.capture-caption small{font-size:10px;color:var(--muted)}.control-panel>.secondary-btn{width:100%}.timer-overlay{position:absolute;inset:0;display:grid;place-items:center;background:#0005;color:#fff;font-size:clamp(60px,12vw,120px);font-weight:800;text-shadow:0 4px 20px #000}.timer-overlay[hidden]{display:none}@media(max-width:900px){.camera-layout{grid-template-columns:1fr}.control-panel{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}.panel-heading,.capture-actions,.control-panel>.secondary-btn,.privacy-note{grid-column:1/-1}.capture-actions{padding:18px 0}.viewfinder{max-height:none}}@media(max-width:560px){.camera-tools{gap:7px;padding:8px}.tool-btn{padding:9px;font-size:12px}.tool-btn span{display:none}.control-panel{display:block}.viewfinder{border-radius:11px}.camera-layout{gap:12px}}
+/* Phone camera: portrait finder and thumb-friendly shutter dock */
+.mobile-settings{border-top:1px solid var(--line);margin-top:4px}
+.mobile-settings>summary{cursor:pointer;list-style:none;padding:13px 2px;font-size:13px;font-weight:750;display:flex;align-items:center;justify-content:space-between}
+.mobile-settings>summary::-webkit-details-marker{display:none}
+.mobile-settings>summary:after{content:"＋";color:var(--accent);font-size:17px}
+.mobile-settings[open]>summary:after{content:"－"}
+.mobile-settings>summary span{font-size:10px;color:var(--muted);font-weight:500;margin-left:auto;margin-right:10px}
+.mobile-settings-content{padding:0 2px 5px}
+.stop-camera-btn{padding:9px 12px;font-size:11px}
+@media(max-width:600px){
+  .camera-layout{display:flex;flex-direction:column;gap:10px}
+  .viewfinder-wrap{width:100%;display:flex;flex-direction:column;align-items:center}
+  .viewfinder{width:min(100%, calc((100svh - 250px) * .75));height:min(58svh,560px);aspect-ratio:3/4;max-height:58svh;margin:0 auto;border-radius:14px}
+  #video{object-fit:cover}
+  .viewfinder-top{top:9px;left:9px;right:9px}
+  .viewfinder-top span{font-size:10px;padding:5px 7px}
+  .camera-tools{width:100%;margin-top:8px;padding:7px;gap:6px;display:grid;grid-template-columns:auto minmax(70px,1fr) auto}
+  .tool-btn{min-height:42px;justify-content:center;padding:8px 10px}
+  .tool-btn span{display:inline;font-size:10px}
+  .zoom-control{gap:6px;min-width:0;font-size:11px}
+  .zoom-control span{font-size:10px}.zoom-control output{min-width:34px;font-size:10px}
+  .control-panel{position:sticky;bottom:0;z-index:3;width:100%;display:block;padding:7px 13px calc(8px + env(safe-area-inset-bottom));border-radius:16px 16px 10px 10px;background:rgba(25,30,38,.97);box-shadow:0 -8px 24px #0005;backdrop-filter:blur(14px)}
+  .panel-heading{display:none}
+  .capture-actions{padding:4px 0 8px;gap:13px;min-height:76px}
+  .shutter{width:64px;height:64px;border-width:4px;touch-action:manipulation}
+  .shutter span{width:48px;height:48px}
+  .capture-caption{gap:2px}.capture-caption strong{font-size:13px}.capture-caption small{font-size:9px}
+  .stop-camera-btn{min-height:38px;padding:7px 10px}
+  .mobile-settings{margin-top:0}
+  .mobile-settings>summary{padding:10px 2px 7px;font-size:12px}
+  .mobile-settings-content .setting-group{padding:10px 0}
+  .mobile-settings-content .hint{font-size:10px}
+  .privacy-note{font-size:9px;margin:7px 0 2px}
+  .timer-overlay{font-size:clamp(64px,20vw,110px)}
+}
+@media(max-width:380px){
+  .viewfinder{height:52svh;width:min(100%,calc(52svh * .75))}
+  .tool-btn{padding:7px 6px}.tool-btn span{font-size:9px}
+  .camera-tools{grid-template-columns:auto minmax(55px,1fr) auto}
+}
+@media(orientation:landscape) and (max-height:520px){
+  .viewfinder{height:calc(100svh - 180px);width:auto;aspect-ratio:4/3;max-height:none}
+  .camera-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,38%);align-items:start}
+  .control-panel{position:relative;bottom:auto}
+}
